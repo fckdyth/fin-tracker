@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: fin-tracker-db
+    environment:
+      POSTGRES_DB: fintracker
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - fintracker-data:/var/lib/postgresql/data
+
+volumes:
+  fintracker-data:
